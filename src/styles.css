@@ -9,3 +9,7 @@ background: linear-gradient(to right, #71B280, #134E5E); /* W3C, IE 10+/ Edge, F
   color: white;
   text-transform: uppercase;
 }
+
+.textError {
+  font-size: 1rem;
+}
