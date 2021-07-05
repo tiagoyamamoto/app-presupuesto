@@ -19,13 +19,15 @@ export class IngresarPresupuestoComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    console.log(this.cantidad)
   }
 
   agregar() {
     if(this.cantidad > 0) {
       this.cantidadIncorrecta = false;
-      this._presupuestoService.presupuesto == this.cantidad;
-      this._presupuestoService.restante == this.cantidad;
+      this._presupuestoService.presupuesto = this.cantidad;
+      this._presupuestoService.restante = this.cantidad;
+
       this.router.navigate(['/gastos'])
     } else {
       this.cantidadIncorrecta = true;
