@@ -26,13 +26,22 @@ export class ListarGastoComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.presupuesto = this._presupuestoService.presupuesto;
-    this.subscription = this._presupuestoService.getGastos().subscribe(data => {
-      // console.log(data);
-    });
+    this.restante = this._presupuestoService.restante;
   }
 
   ngOnDestroy(): void {
     this.subscription.unsubscribe();
+  }
+
+  // tslint:disable-next-line: typedef
+  alicarColorRestante() {
+    if (this.presupuesto / 4 > this.restante) {
+      return 'alert alert-danger';
+    } else if (this.presupuesto / 2 > this.restante) {
+      return 'alert alert-warning';
+    } else {
+      return 'alert alert-secondary';
+    }
   }
 
 }
